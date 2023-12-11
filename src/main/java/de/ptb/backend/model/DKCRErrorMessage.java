@@ -19,31 +19,21 @@ package de.ptb.backend.model;
 
 import lombok.Data;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.util.Base64;
 @Data
-public class DKCRResponseMessage {
-    String fileName;
-    String base64String;
+public class DKCRErrorMessage {
+    String errorMessage;
 
     /**
-     * This class contains the information of a succesfull response of the server which will be attached as response in BackendController.java
-     * @param fileName String
-     * @param file File
-     * @throws IOException Throws exception when path to file is nonexistent.
+     * This class contains the information of an error message which will be attached of an error response in BackendController.java
+     * @param message String which contains the details of the error
      */
-    public DKCRResponseMessage(String fileName, File file) throws IOException {
-        this.fileName = fileName+ ".xml";
-        byte[] fileContent = Files.readAllBytes(file.toPath());
-        this.base64String = Base64.getEncoder().encodeToString(fileContent);
+    public  DKCRErrorMessage(String message){
+        this.errorMessage = message;
     }
     @Override
     public String toString() {
         return "DKCRResponseMessage{" +
-                "fileName='" + fileName +'\'' +
-                ", base64String='" + base64String + '\'' +
+                "Message='" + this.errorMessage +'\'' +
                 '}';
     }
 }

@@ -36,6 +36,11 @@ public class DKCR {
 	double DKCRMean;	// XX	Mean value determined for all data marked as Present
 	double DKCRStdDev;	// XX	Standard Deviation determined for all data marked as Present
 
+	/**
+	 * Public constructor parameterless method for singleton DKCR object
+	 *
+	 * @throws IOException		On file read error
+	 */
 	public DKCR() throws IOException
 	{
 		// So far empty constructor
@@ -44,11 +49,24 @@ public class DKCR {
 		int result = ReadData();
 
 	}
+
+	/**
+	 * Public constructor with dirInputs parameter for singleton DKCR object
+	 *
+	 * @param dirInputs		DirInputs core DKCR Input data
+	 * @throws IOException	???
+	 */
 	public DKCR(Vector<DIR> dirInputs) throws IOException {
 		this.DirInputs = dirInputs;
 		this.NTotalContributions = this.DirInputs.size();
 	}
 
+	/**
+	 * Method to read basic DKCR information from text file
+	 *
+	 * @return
+	 * @throws IOException		Throws exception on file read error
+	 */
 	public int ReadData() throws IOException
 	{
 		// Read data from DKCR.txt file which contains the set up information for the DKCR
@@ -104,6 +122,12 @@ public class DKCR {
 		return 0;
 	}
 
+	/**
+	 * Read the actual contributions from contributors to the DKCR from file
+	 *
+	 * @return
+	 * @throws IOException		Throws exception on file read error
+	 */
 	public int ReadDKRCContributions() throws IOException
 	{
 
@@ -151,6 +175,14 @@ public class DKCR {
 
 	}
 
+	/**
+	 * Method to add a contribution to the list of contributors
+	 *
+	 * @param sID		ID for the contributor
+	 * @param dxi		Core value associated with the contributor
+	 * @param dUi		Expanded uncertainty associated with the core value
+	 * @return
+	 */
 	public int AddContributions(String sID, Double dxi, Double dUi)
 	{
 		// The size of DirInputs will always be NTotalContributions
@@ -201,6 +233,11 @@ public class DKCR {
 		return 1;							// XX
 	}										// XX
 
+	/**
+	 * Calculates the mean value for of the DKCR participants contributions
+	 *
+	 * @return
+	 */
 	public double CalcMean()		// XX
 	{								// XX
 
@@ -230,6 +267,12 @@ public class DKCR {
 		return mean;					// XX
 	}								// XX
 
+	/**
+	 * Calculates the standard deviation value for of the DKCR participants contributions
+	 *
+	 * @param mean	The mean value for the contributions
+	 * @return
+	 */
 	public double CalcStdDev(double mean)		// XX
 	{								// XX
 
@@ -259,9 +302,16 @@ public class DKCR {
 		return stddev;				// XX
 	}								// XX
 
-
-	public Vector<GRunResult> ProcessGrubsDKCR(double mean, double stddev)
-	{
+	/**
+	 * This method processes the contribution data to generate the Grubs result values for the
+	 * contributions and the overall reference values for xRef and URef.
+	 *
+	 * @param mean			The mean value for the contributions
+	 * @param stddev		The standard deviation value for the contributions
+	 * @return
+	 * @throws Exception
+	 */
+	public Vector<GRunResult> ProcessGrubsDKCR(double mean, double stddev) throws Exception {
 		int NOutlierFlags = 0;		// The number of outlier flags from current Run
 		int OldNOutlierFlags = 0;	// The number of outlier flags from the previous Run
 		int NRun = 1;				// The number of the current Run
@@ -368,8 +418,15 @@ public class DKCR {
 				// Get the maximum data GEOResult object
 				GEO p = a.GEOResults.get(iGMax);
 
-				// Get the Grubs Critical Value for the number of contributions processed (Use Nopc from previous loop)
-				GrubsStatistic gs = GSTable.gst.get(Nopc - 3);	//Table starts at 3
+				GrubsStatistic gs;
+
+				try {
+					// Get the Grubs Critical Value for the number of contributions processed (Use Nopc from previous loop)
+					gs = GSTable.gst.get(Nopc - 3);    // Table starts at 3
+				}
+				catch(Exception e){
+					throw new Exception("At least 3 participants for the Grubs Test are required");
+				}
 
 				// Check to see if the G Value exceeds the Grubs Critical Value
 				if(Double.compare(GMax, gs.GrubsCritical) > 0)
@@ -395,17 +452,12 @@ public class DKCR {
 					// For the moment leave it in place.
 					a.ProcessGRunResult(iGMax, DirInputs);
 				}
-
-
-
-
 			}
 			else
 			{
 				// There should always be a maximum value so iGMax != 0 always
 				// If iGMax == 0 something has gone wrong!
-				System.out.println("****ERROR***** in ProcessGrubsDKCR. No Maximum found.");
-
+				throw new Exception("At least 3 or more participants.");
 			}
 
 
@@ -421,6 +473,12 @@ public class DKCR {
 		return this.GRunResults;
 	}
 
+	/**
+	 * 	 * This method processes the contribution data to generate the En result values for the
+	 * 	 * contributions and the overall reference values for xRef and URef.
+	 *
+	 * @return
+	 */
 	public int ProcessDKCR()
 	{
 		int NOutlierFlags = 0;		// The number of outlier flags from current Run
@@ -538,8 +596,16 @@ public class DKCR {
 			a.xRef = xRef;
 
 			//// Do 2nd Stage DKCR Processing
+			// Only 1 possible outlier can be found. This is based on the maximum value of En95 found that is greater than or equal to 1.0
+			// If the maximum value of En95 found is less than 1, then there is no new outlier found in this run and processing will stop at the end
+			// of this run.
 
-			Double En95 = 0.0;
+			Double En95 = 0.0;			// The current value of En95 for this contribution
+			Double En95Max = 0.0;		// The maximum value of En95 found in the loop
+			int iEn95Max = -1;			// The integer position of the Maximum value of En95 found (so far) and at the end of the process loop
+
+			// Note that only contributions that are present (ResultPresentFlag = true) and contributions that are not already outliers (from previous run)
+			// will be processed.
 
 			for(int i = 0; i < DirInputs.size(); i++)
 			{
@@ -567,18 +633,67 @@ public class DKCR {
 						// eo.RoundEquivalenceValue();
 						p.RoundEquivalenceValue();
 
-						// Is it a (new) outlier?
-						if(En95 > 1.0)
+						// Check to see if this En95 value is the maximum so far
+						if(En95 > En95Max)
 						{
-							// Yes its an new Outlier
-							// eo.OutlierFlag = true;
-							p.OutlierFlag = true;
-
-							// Increment the Outlier Count NOutlierFlags
-							NOutlierFlags++;
+							// Yes it is, store values
+							iEn95Max = i;
+							En95Max = En95;
 						}
+
+		    			/* BLOCK OUT OLD CODE
+
+		    			// Is it a (new) outlier?
+		    			if(En95 > 1.0)
+		    			{
+		    				// Yes its an new Outlier
+		    				// eo.OutlierFlag = true;
+		    				p.OutlierFlag = true;
+
+		    				// Increment the Outlier Count NOutlierFlags
+		    				NOutlierFlags++;
+		    			}
+
+		    			*/
+
+
+					}	// End of if not already outlier block
+					else
+					{
+						// OK this was marked as an outlier in the previous run so need to calc En95 using Eqn. 4 not Eqn 3.
+						En95 = Math.abs((o.xi - a.xRef) / Math.sqrt(o.Ui*o.Ui + a.URef*a.URef));
+						p.EquivalenceValue = En95;
+						p.RoundEquivalenceValue();
 					}
+
+
+
+
+				}	//  End of if ResultPresent Block
+			}	// End of for loop
+
+			// OK now check to see if the maximum En95 is greater or equal to 1 and if so set it to be 'the' new outlier
+			// If its not greater than, or equal to 1.0 then there is no new outlier.
+			if(iEn95Max != -1)
+			{
+				// As expected a maximum was found
+
+				// Get the relevant EO object
+				EO p = a.EOResults.get(iEn95Max);
+
+				// Now check to see if the En95Max value is >= 1. If yes, its a new outlier, if no, its not.
+				if(Double.compare(En95Max, 1.0) > 0)
+				{
+					// Yes its a new outlier
+					p.OutlierFlag = true;
+
+					// Increment the number of Outliers
+					NOutlierFlags++;
 				}
+			}
+			else
+			{
+				// This should never happen, no maximum found!
 			}
 
 			// Increment the Run Number
@@ -588,6 +703,9 @@ public class DKCR {
 		return 0;
 	}
 
+	/**
+	 * Method to output the En Process values to the Console Window (for debug purposes)
+	 */
 	public void PresentResults()
 	{
 
@@ -607,6 +725,9 @@ public class DKCR {
 		System.out.println("End of Standard En");
 	}
 
+	/**
+	 * Method to output the Grubs Process values to the Console Window (for debug purposes)
+	 */
 	public void PresentGResults()
 	{
 
@@ -626,7 +747,7 @@ public class DKCR {
 		System.out.println("End of Grubs En");
 	}
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 
 		// Create the NMIS object that will contain a list of BIPM registered NMIs

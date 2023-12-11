@@ -8,12 +8,26 @@ import java.util.Vector;
 
 public class NMIS
 {
-	Vector<DKCRContributor> nmis = new Vector<DKCRContributor>();
+	Vector<DKCRContributor> nmis = new Vector<DKCRContributor>();		// A List of NMIs (Worldwide) who could be
+														// a contributor to a DKCR process
+
+	/**
+	 * Constructor method for the singular list of NMIs object
+	 *
+	 * @throws IOException		// Exception thrown on file read error
+	 */
 	public NMIS() throws IOException
 	{
 		// Empty Constructor
 		int result = ReadData();
 	}
+
+	/**
+	 * Method to read a list of NMIs from a data file
+	 *
+	 * @return
+	 * @throws IOException 		// Exception thrown on file read error
+	 */
 	public int ReadData() throws IOException
 	{
 		// Read the NMI data from standard filename "NMIS.txt" into Vector "NMIS"

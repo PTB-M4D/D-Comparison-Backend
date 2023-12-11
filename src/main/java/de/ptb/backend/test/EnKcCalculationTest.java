@@ -1,3 +1,20 @@
+/*
+ * Copyright (c) 2022 - 2023 Physikalisch-Technische Bundesanstalt (PTB), all rights reserved.
+ * This source code and software is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public License as published
+ * by the Free Software Foundation, version 3 of the License.
+ * The software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this XSD.  If not, see http://www.gnu.org/licenses.
+ * CONTACT: 		info@ptb.de
+ * DEVELOPMENT:	https://d-si.ptb.de
+ * AUTHORS:		Wafa El Jaoua, Tobias Hoffmann, Clifford Brown, Daniel Hutzschenreuter
+ * LAST MODIFIED:	15.08.23, 15:33
+ */
+
 package de.ptb.backend.test;
 
 import de.ptb.backend.BERT.*;
@@ -17,6 +34,10 @@ public class EnKcCalculationTest {
     List<Double> energyValues = new ArrayList<>(Arrays.asList(5.169930,5.169860,5.169886,5.169979,5.169950,5.169875,5.169900,5.170060,5.170660,5.169600,5.170025,5.169950));
     List<Double> uncertainties = new ArrayList<>(Arrays.asList(0.000088,0.000086,0.000100,0.000062,0.000108,0.000100,0.000400,0.000160,0.000200,0.000260,0.000120,0.000200));
     List<Double> outlierFlag = new ArrayList<>(Arrays.asList(0.25,1.13,0.68,0.53,0.01,0.80,0.13,0.70,3.59,1.36,0.64,0.00));
+
+    /**
+     * This is a test class to test the calculation of the en and kc values.
+     */
     @Test
     public void demoTestMethod(){
         assertTrue(true);

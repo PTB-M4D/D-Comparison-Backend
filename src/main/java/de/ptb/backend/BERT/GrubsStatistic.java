@@ -4,7 +4,7 @@ public class GrubsStatistic {
 
     // An individual Grubs Statistic
 
-    int GrubsN;					// The number of data values to consider
+    int GrubsN;					// The number of actual contributions in DKCR
     double GrubsCritical;		// The corresponding critical Grubs Value
 
 }

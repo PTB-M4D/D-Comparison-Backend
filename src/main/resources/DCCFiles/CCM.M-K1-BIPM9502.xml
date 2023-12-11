@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dcc:digitalCalibrationCertificate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dcc="https://ptb.de/dcc" xmlns:si="https://ptb.de/si" xsi:schemaLocation="https://ptb.de/dcc https://www.ptb.de/dcc/dcc.xsd https://ptb.de/si https://www.ptb.de/si/SI_Format.xsd" schemaVersion="3.2.1">
+    <dcc:administrativeData>
+        <dcc:dccSoftware>
+            <dcc:software>
+                <dcc:name>
+                    <dcc:content>Notepad++</dcc:content>
+                </dcc:name>
+                <dcc:release>v8.5.3</dcc:release>
+            </dcc:software>
+        </dcc:dccSoftware>
+        <dcc:coreData>
+            <dcc:countryCodeISO3166_1>DE</dcc:countryCodeISO3166_1>
+            <dcc:usedLangCodeISO639_1>en</dcc:usedLangCodeISO639_1>
+            <dcc:mandatoryLangCodeISO639_1>en</dcc:mandatoryLangCodeISO639_1>
+            <dcc:uniqueIdentifier>Exchange</dcc:uniqueIdentifier>
+            <dcc:beginPerformanceDate>2023-01-01</dcc:beginPerformanceDate>
+            <dcc:endPerformanceDate>2023-02-01</dcc:endPerformanceDate>
+            <dcc:performanceLocation>laboratory</dcc:performanceLocation>
+            <dcc:issueDate>2023-03-01</dcc:issueDate>
+        </dcc:coreData>
+        <dcc:items>
+            <dcc:identifications>
+                <dcc:identification refType="basic_serialNo">
+                    <dcc:issuer>calibrationLaboratory</dcc:issuer>
+                    <dcc:value>serialNo</dcc:value>
+                    <dcc:name>
+                        <dcc:content lang="en">Serial No.</dcc:content>
+                    </dcc:name>
+                </dcc:identification>
+            </dcc:identifications>
+            <dcc:item id="weight01">
+                <dcc:name>
+                    <dcc:content lang="en">Mass transfer standard</dcc:content>
+                </dcc:name>
+                <dcc:identifications>
+                    <dcc:identification refType="mass_material">
+                        <dcc:issuer>manufacturer</dcc:issuer>
+                        <dcc:value>natural silicon</dcc:value>
+                        <dcc:name>
+                            <dcc:content lang="en">Material of transfer normal</dcc:content>
+                        </dcc:name>
+                    </dcc:identification>
+                    <dcc:identification refType="mass_shape">
+                        <dcc:issuer>manufacturer</dcc:issuer>
+                        <dcc:value>sphere</dcc:value>
+                        <dcc:name>
+                            <dcc:content lang="en">Shape of transfer normal</dcc:content>
+                        </dcc:name>
+                    </dcc:identification>
+                </dcc:identifications>
+                <dcc:itemQuantities>
+                    <dcc:itemQuantity refType="basic_nominalValue">
+                        <dcc:name>
+                            <dcc:content lang="en">Nominal mass</dcc:content>
+                        </dcc:name>
+                        <si:real>
+                            <si:value>1</si:value>
+                            <si:unit>\kilogram</si:unit>
+                        </si:real>
+                    </dcc:itemQuantity>
+                </dcc:itemQuantities>
+            </dcc:item>
+        </dcc:items>
+        <dcc:calibrationLaboratory>
+            <dcc:contact>
+                <dcc:name>
+                    <dcc:content>BIPM</dcc:content>
+                </dcc:name>
+                <dcc:location>
+                    <dcc:city>Paris</dcc:city>
+                    <dcc:countryCode>DE</dcc:countryCode>
+                    <dcc:postCode>F-92319 Sevres</dcc:postCode>
+                    <dcc:street>GrandRue</dcc:street>
+                    <dcc:streetNo>12</dcc:streetNo>
+                    <dcc:further>
+                        <dcc:content lang="en">Working Group 1.11 Mass</dcc:content>
+                    </dcc:further>
+                </dcc:location>
+            </dcc:contact>
+        </dcc:calibrationLaboratory>
+        <dcc:respPersons>
+            <dcc:respPerson>
+                <dcc:person>
+                    <dcc:name>
+                        <dcc:content lang="en">DK</dcc:content>
+                    </dcc:name>
+                </dcc:person>
+            </dcc:respPerson>
+        </dcc:respPersons>
+        <dcc:customer>
+            <dcc:name>
+                <dcc:content>Consultative Committee for Mass (CCM)</dcc:content>
+            </dcc:name>
+            <dcc:location>
+                <dcc:city>Paris</dcc:city>
+                <dcc:countryCode>FR</dcc:countryCode>
+                <dcc:postCode>F-92312 Sevres Cedex</dcc:postCode>
+                <dcc:street>Garnd Rue</dcc:street>
+                <dcc:streetNo>12</dcc:streetNo>
+                <dcc:further>
+                    <dcc:content lang="en">Working Group 1.11 Mass</dcc:content>
+                </dcc:further>
+            </dcc:location>
+        </dcc:customer>
+        <dcc:statements>
+            <dcc:statement>
+                <dcc:declaration>
+                    <dcc:content lang="en">This is a report in XML-format for a data exchange.</dcc:content>
+                </dcc:declaration>
+            </dcc:statement>
+        </dcc:statements>
+    </dcc:administrativeData>
+    <dcc:measurementResults>
+        <dcc:measurementResult refId="weight01 meas1">
+            <dcc:name>
+                <dcc:content lang="en">Weighted mean value</dcc:content>
+            </dcc:name>
+            <dcc:usedMethods>
+                <dcc:usedMethod refType="basic_uncertainty">
+                    <dcc:name>
+                        <dcc:content lang="en">Measurement uncertainty</dcc:content>
+                    </dcc:name>
+                    <dcc:description>
+                        <dcc:content lang="en">The uncertainty stated is the expanded measurement uncertainty obtained by multiplying the standard measurement uncertainty be the coverage factor k = 2.
+                            It has been determine in accordance with  JCGM 100:2008. The value of the measureand then normally lies, with a probability of approximately 95  %, with the attributed coverage interval.</dcc:content>
+                    </dcc:description>
+                    <dcc:norm>JCGM 100:2008</dcc:norm>
+                </dcc:usedMethod>
+                <dcc:usedMethod>
+                    <dcc:name>
+                        <dcc:content lang="en">Procedure for mass determination</dcc:content>
+                    </dcc:name>
+                    <dcc:description>
+                        <dcc:content lang="en">Weighted mean value</dcc:content>
+                    </dcc:description>
+                </dcc:usedMethod>
+            </dcc:usedMethods>
+            <dcc:results>
+                <dcc:result refType="mass_mass">
+                    <dcc:name>
+                        <dcc:content lang="en">Result: weighted mean value</dcc:content>
+                    </dcc:name>
+                    <dcc:data>
+                        <dcc:quantity refType="basic_nominalValue">
+                            <dcc:name>
+                                <dcc:content lang="en">nominal value</dcc:content>
+                            </dcc:name>
+                            <si:real>
+                                <si:value>1</si:value>
+                                <si:unit>\kilogram</si:unit>
+                            </si:real>
+                        </dcc:quantity>
+                        <dcc:quantity refType="basic_measuredValue">
+                            <dcc:name>
+                                <dcc:content lang="en">mass</dcc:content>
+                            </dcc:name>
+                            <si:real>
+                                <si:value>1.000478</si:value>
+                                <si:unit>\kilogram</si:unit>
+                                <si:expandedUnc>
+                                    <si:uncertainty>0.000024</si:uncertainty>
+                                    <si:coverageFactor>2</si:coverageFactor>
+                                    <si:coverageProbability>0.95</si:coverageProbability>
+                                </si:expandedUnc>
+                            </si:real>
+                        </dcc:quantity>
+                    </dcc:data>
+                </dcc:result>
+            </dcc:results>
+        </dcc:measurementResult>
+    </dcc:measurementResults>
+</dcc:digitalCalibrationCertificate>

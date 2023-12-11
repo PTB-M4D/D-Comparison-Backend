@@ -12,26 +12,26 @@
  * CONTACT: 		info@ptb.de
  * DEVELOPMENT:	https://d-si.ptb.de
  * AUTHORS:		Wafa El Jaoua, Tobias Hoffmann, Clifford Brown, Daniel Hutzschenreuter
- * LAST MODIFIED:	15.08.23, 15:33
+ * LAST MODIFIED:	29.08.23, 12:18
  */
+package de.ptb.backend.services;
 
-package de.ptb.backend;
+import de.ptb.backend.model.dsi.SiConstant;
 
-import io.swagger.v3.oas.annotations.OpenAPIDefinition;
-import io.swagger.v3.oas.annotations.info.Info;
-import io.swagger.v3.oas.annotations.servers.Server;
-import io.swagger.v3.oas.annotations.servers.Servers;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.validation.annotation.Validated;
+import javax.swing.text.Document;
+import javax.xml.xpath.XPathExpressionException;
 
-@SpringBootApplication
-@Validated
-@OpenAPIDefinition(info =@Info(title = "DKCRBackend",version = "1.0", description = "DKCR_Backend"), servers = {@Server(url="http://localhost:8083",description = "local system")})
-public class BackendApplication {
+public interface I_PidConstantWebReader {
+    /**
+     * This function sets the constant which is later requested from the constant backend.
+     * @param constant String
+     */
+    void setConstant(String constant);
 
-    public static void main(String[] args) {
-
-        SpringApplication.run(BackendApplication.class, args);
-    }
+    /**
+     * This function establishes a connection with this.dConstantUrl and this.constant and reads the necessary contents from the xml file received.
+     * @return SiConstant containing the wanted constant
+     * @throws XPathExpressionException
+     */
+    SiConstant getConstant() throws XPathExpressionException;
 }

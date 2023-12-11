@@ -11,6 +11,11 @@ public class GrubsStatisticsTable {
 
     Vector<GrubsStatistic> gst = new Vector<GrubsStatistic>();
 
+    /**
+     * This method generates the Grubs Statistic Table of data
+     *
+     * @throws IOException on file read error
+     */
     public GrubsStatisticsTable() throws IOException
     {
         // Empty Constructor
@@ -39,6 +44,12 @@ public class GrubsStatisticsTable {
 
     }
 
+    /**
+     * This method reads in the Grubs Statistics table from a file on the local drive
+     *
+     * @return
+     * @throws IOException on file read error
+     */
     public int ReadGrubsTableData() throws IOException
     {
         // Read the Grubs Statistic Table data from standard filename "GrubsTable.txt" into Vector "gst"

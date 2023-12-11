@@ -46,7 +46,7 @@
         </dcc:items>
         <dcc:calibrationLaboratory>
             <dcc:contact>
-                <dcc:name>NRC</dcc:name>
+                <dcc:name>BIPM</dcc:name>
                 <dcc:eMail>info@nmij.jp</dcc:eMail>
                 <dcc:location>
                     <dcc:city>Tokyo</dcc:city>
@@ -89,10 +89,10 @@
                        </dcc:name>
                        <si:real>
                            <si:label>Mass</si:label>
-                           <si:value>999.530253</si:value>
-                           <si:unit>gram</si:unit>
+                           <si:value>4.7799999999997844E-4</si:value>
+                           <si:unit>\kilogram</si:unit>
                            <si:expandedUnc>
-                               <si:uncertainty>9.7E-5</si:uncertainty>
+                               <si:uncertainty>2.4E-5</si:uncertainty>
                                <si:coverageFactor>2</si:coverageFactor>
                                <si:coverageProbability>0.95</si:coverageProbability>
                                <si:distribution>Normal</si:distribution>
@@ -104,7 +104,7 @@
                            <dcc:content lang="en">En</dcc:content>
                        </dcc:name>
                        <si:real>
-                           <si:value>8.4202872727584128E16</si:value>
+                           <si:value>2.4964490582713128E16</si:value>
                            <si:unit>\one</si:unit>
                        </si:real>
                    </dcc:quantity>
@@ -121,10 +121,10 @@
                        </dcc:name>
                        <si:real>
                            <si:label>Energy</si:label>
-                           <si:value>8.983329911878715E19</si:value>
+                           <si:value>4.2960497543617945E13</si:value>
                            <si:unit>\joule</si:unit>
                            <si:expandedUnc>
-                               <si:uncertainty>9.7E-5</si:uncertainty>
+                               <si:uncertainty>2.4E-5</si:uncertainty>
                                <si:coverageFactor>2</si:coverageFactor>
                                <si:coverageProbability>0.95</si:coverageProbability>
                            </si:expandedUnc>
@@ -143,10 +143,10 @@
                        </dcc:name>
                        <si:real>
                            <si:label>Energy</si:label>
-                           <si:value>8.983329911878715E19</si:value>
+                           <si:value>4.2960497543617945E13</si:value>
                            <si:unit>\joule</si:unit>
                            <si:expandedUnc>
-                               <si:uncertainty>9.7E-5</si:uncertainty>
+                               <si:uncertainty>2.4E-5</si:uncertainty>
                                <si:coverageFactor>2</si:coverageFactor>
                                <si:coverageProbability>0.95</si:coverageProbability>
                            </si:expandedUnc>
@@ -165,7 +165,7 @@
                        </dcc:name>
                        <si:real>
                            <si:value>-1.0</si:value>
-                           <si:unit>gram</si:unit>
+                           <si:unit>\kilogram</si:unit>
                        </si:real>
                    </dcc:quantity>
                </dcc:data>
@@ -188,10 +188,10 @@
                        </dcc:name>
                        <si:real>
                            <si:label>Mass</si:label>
-                           <si:value>999.530122</si:value>
-                           <si:unit>gram</si:unit>
+                           <si:value>4.669999999999952E-4</si:value>
+                           <si:unit>\kilogram</si:unit>
                            <si:expandedUnc>
-                               <si:uncertainty>9.3E-4</si:uncertainty>
+                               <si:uncertainty>2.4E-5</si:uncertainty>
                                <si:coverageFactor>2</si:coverageFactor>
                                <si:coverageProbability>0.95</si:coverageProbability>
                                <si:distribution>Normal</si:distribution>
@@ -203,7 +203,7 @@
                            <dcc:content lang="en">En</dcc:content>
                        </dcc:name>
                        <si:real>
-                           <si:value>8.39228920097869E15</si:value>
+                           <si:value>2.4386544575598312E16</si:value>
                            <si:unit>\one</si:unit>
                        </si:real>
                    </dcc:quantity>
@@ -220,10 +220,10 @@
                        </dcc:name>
                        <si:real>
                            <si:label>Energy</si:label>
-                           <si:value>8.983328734509431E19</si:value>
+                           <si:value>4.197186684700895E13</si:value>
                            <si:unit>\joule</si:unit>
                            <si:expandedUnc>
-                               <si:uncertainty>9.3E-4</si:uncertainty>
+                               <si:uncertainty>2.4E-5</si:uncertainty>
                                <si:coverageFactor>2</si:coverageFactor>
                                <si:coverageProbability>0.95</si:coverageProbability>
                            </si:expandedUnc>
@@ -242,10 +242,10 @@
                        </dcc:name>
                        <si:real>
                            <si:label>Energy</si:label>
-                           <si:value>8.983328734509431E19</si:value>
+                           <si:value>4.197186684700895E13</si:value>
                            <si:unit>\joule</si:unit>
                            <si:expandedUnc>
-                               <si:uncertainty>9.3E-4</si:uncertainty>
+                               <si:uncertainty>2.4E-5</si:uncertainty>
                                <si:coverageFactor>2</si:coverageFactor>
                                <si:coverageProbability>0.95</si:coverageProbability>
                            </si:expandedUnc>
@@ -264,7 +264,7 @@
                        </dcc:name>
                        <si:real>
                            <si:value>-1.0</si:value>
-                           <si:unit>gram</si:unit>
+                           <si:unit>\kilogram</si:unit>
                        </si:real>
                    </dcc:quantity>
                </dcc:data>
@@ -287,10 +287,10 @@
                        </dcc:name>
                        <si:real>
                            <si:label>Mass</si:label>
-                           <si:value>999.530063</si:value>
-                           <si:unit>gram</si:unit>
+                           <si:value>4.6799999999991293E-4</si:value>
+                           <si:unit>\kilogram</si:unit>
                            <si:expandedUnc>
-                               <si:uncertainty>1.78E-4</si:uncertainty>
+                               <si:uncertainty>2.8E-5</si:uncertainty>
                                <si:coverageFactor>2</si:coverageFactor>
                                <si:coverageProbability>0.95</si:coverageProbability>
                                <si:distribution>Normal</si:distribution>
@@ -302,7 +302,7 @@
                            <dcc:content lang="en">En</dcc:content>
                        </dcc:name>
                        <si:real>
-                           <si:value>8.3477866782369952E16</si:value>
+                           <si:value>1.6150094573675396E16</si:value>
                            <si:unit>\one</si:unit>
                        </si:real>
                    </dcc:quantity>
@@ -319,10 +319,10 @@
                        </dcc:name>
                        <si:real>
                            <si:label>Energy</si:label>
-                           <si:value>8.983328204243876E19</si:value>
+                           <si:value>4.2061742364875234E13</si:value>
                            <si:unit>\joule</si:unit>
                            <si:expandedUnc>
-                               <si:uncertainty>1.78E-4</si:uncertainty>
+                               <si:uncertainty>2.8E-5</si:uncertainty>
                                <si:coverageFactor>2</si:coverageFactor>
                                <si:coverageProbability>0.95</si:coverageProbability>
                            </si:expandedUnc>
@@ -341,10 +341,10 @@
                        </dcc:name>
                        <si:real>
                            <si:label>Energy</si:label>
-                           <si:value>8.983328204243876E19</si:value>
+                           <si:value>4.2061742364875234E13</si:value>
                            <si:unit>\joule</si:unit>
                            <si:expandedUnc>
-                               <si:uncertainty>1.78E-4</si:uncertainty>
+                               <si:uncertainty>2.8E-5</si:uncertainty>
                                <si:coverageFactor>2</si:coverageFactor>
                                <si:coverageProbability>0.95</si:coverageProbability>
                            </si:expandedUnc>
@@ -363,7 +363,7 @@
                        </dcc:name>
                        <si:real>
                            <si:value>-1.0</si:value>
-                           <si:unit>gram</si:unit>
+                           <si:unit>\kilogram</si:unit>
                        </si:real>
                    </dcc:quantity>
                </dcc:data>
@@ -386,10 +386,10 @@
                        </dcc:name>
                        <si:real>
                            <si:label>Mass</si:label>
-                           <si:value>999.530161</si:value>
-                           <si:unit>gram</si:unit>
+                           <si:value>4.7799999999997844E-4</si:value>
+                           <si:unit>\kilogram</si:unit>
                            <si:expandedUnc>
-                               <si:uncertainty>0.00109</si:uncertainty>
+                               <si:uncertainty>3.2E-5</si:uncertainty>
                                <si:coverageFactor>2</si:coverageFactor>
                                <si:coverageProbability>0.95</si:coverageProbability>
                                <si:distribution>Normal</si:distribution>
@@ -401,7 +401,7 @@
                            <dcc:content lang="en">En</dcc:content>
                        </dcc:name>
                        <si:real>
-                           <si:value>3.926836850243927E15</si:value>
+                           <si:value>1.7160440733946274E16</si:value>
                            <si:unit>\one</si:unit>
                        </si:real>
                    </dcc:quantity>
@@ -418,10 +418,10 @@
                        </dcc:name>
                        <si:real>
                            <si:label>Energy</si:label>
-                           <si:value>8.983329085023951E19</si:value>
+                           <si:value>4.2960497543617945E13</si:value>
                            <si:unit>\joule</si:unit>
                            <si:expandedUnc>
-                               <si:uncertainty>0.00109</si:uncertainty>
+                               <si:uncertainty>3.2E-5</si:uncertainty>
                                <si:coverageFactor>2</si:coverageFactor>
                                <si:coverageProbability>0.95</si:coverageProbability>
                            </si:expandedUnc>
@@ -440,10 +440,10 @@
                        </dcc:name>
                        <si:real>
                            <si:label>Energy</si:label>
-                           <si:value>8.983329085023951E19</si:value>
+                           <si:value>4.2960497543617945E13</si:value>
                            <si:unit>\joule</si:unit>
                            <si:expandedUnc>
-                               <si:uncertainty>0.00109</si:uncertainty>
+                               <si:uncertainty>3.2E-5</si:uncertainty>
                                <si:coverageFactor>2</si:coverageFactor>
                                <si:coverageProbability>0.95</si:coverageProbability>
                            </si:expandedUnc>
@@ -462,7 +462,7 @@
                        </dcc:name>
                        <si:real>
                            <si:value>-1.0</si:value>
-                           <si:unit>gram</si:unit>
+                           <si:unit>\kilogram</si:unit>
                        </si:real>
                    </dcc:quantity>
                </dcc:data>
@@ -481,7 +481,7 @@
            <dcc:data>
                <dcc:quantity>
                    <si:real>
-                       <si:value>8.983329511759115E19</si:value>
+                       <si:value>4.246039330799038E13</si:value>
                        <si:unit>/gram</si:unit>
                        <si:difference>-1.0</si:difference>
                        <si:expandedUnc>
@@ -505,7 +505,7 @@
                    </dcc:name>
                        <si:real>
                            <si:label>Energy</si:label>
-                           <si:value>8.073813920992792E36</si:value>
+                           <si:value>3.8161498376758473E30</si:value>
                            <si:unit>\joule</si:unit>
                            <si:expandedUnc>
                                <si:uncertainty>0.0</si:uncertainty>
@@ -528,10 +528,10 @@
                        </dcc:name>
                        <si:real>
                            <si:label>Energy (Grubs)</si:label>
-                           <si:value>8.983329511759115E19</si:value>
+                           <si:value>4.246039330799038E13</si:value>
                            <si:unit>\joule</si:unit>
                            <si:expandedUnc>
-                               <si:uncertainty>8.456352721896728E-5</si:uncertainty>
+                               <si:uncertainty>1.3217185928497486E-5</si:uncertainty>
                                <si:coverageFactor>0</si:coverageFactor>
                                <si:coverageProbability>0.0</si:coverageProbability>
                                <si:distribution>Normal</si:distribution>

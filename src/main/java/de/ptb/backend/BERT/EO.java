@@ -6,6 +6,11 @@ public class EO {
 	Double EquivalenceValue;
 	Double EquivalenceValueRounded;
 
+	/**
+	 * This method calculates a rounded to 2 decimal place value for the Equivalence value
+	 *
+	 * @return
+	 */
 	public int RoundEquivalenceValue()
 	{
 
@@ -45,6 +50,12 @@ public class EO {
 		int y = 1;
 		return 0;
 	}
+
+	/**
+	 *This function returns a string of attributes for a EO object in the form of a JSON string
+	 *
+	 * @return
+	 */
 	@Override
 	public String toString() {
 		return "EO{" +
@@ -54,14 +65,29 @@ public class EO {
 				'}';
 	}
 
+	/**
+	 * Getter for OutlierFlag Boolean attribute
+	 *
+	 * @return OutlierFlag Boolean
+	 */
 	public Boolean getOutlierFlag() {
 		return OutlierFlag;
 	}
 
+	/**
+	 *  Getter for EquivalenceValue Double attribute
+	 *
+	 * @return EquivalenceValue Double
+	 */
 	public Double getEquivalenceValue() {
 		return EquivalenceValue;
 	}
 
+	/**
+	 * Getter for EquivalenceValueRounded Double attribute
+	 *
+	 * @return EquivalenceValueRounded Double
+	 */
 	public Double getEquivalenceValueRounded() {
 		return EquivalenceValueRounded;
 	}
